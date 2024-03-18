@@ -1,0 +1,19 @@
+<mapper namespace="com.example.demo.mapper.UserMapper">
+    <!-- Create -->
+    <insert id="insertUser" parameterType="com.example.demo.model.User">
+        INSERT INTO users(name, age) VALUES(#{name}, #{age})
+    </insert>
+
+    <!-- Update -->
+    <update id="updateUser" parameterType="com.example.demo.model.User">
+        UPDATE users SET name=#{name}, age=#{age} WHERE id=#{id}
+    </update>
+
+    <!-- Delete -->
+    <delete id="deleteUser" parameterType="int">
+        DELETE FROM users WHERE id=#{id}
+    </delete>
+     <select id="getUser" parameterType="int" resultType="com.example.demo.model.User">
+        SELECT * FROM users WHERE id = #{id}
+    </select>
+</mapper>
