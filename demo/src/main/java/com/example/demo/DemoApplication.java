@@ -10,8 +10,8 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.core.env.Environment;
 
 @SpringBootApplication
+@ComponentScan("com.example.demo.server.*")
 @MapperScan("com.example.demo.mapper.*")
-@ComponentScan("com.example.demo.*")
 public class DemoApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);

@@ -1,22 +1,25 @@
 package com.example.demo.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
-
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.example.demo.entity.TUser;
 import com.example.demo.model.User;
 
-@Mapper
 @Repository
-public interface UserMapper {
+@Mapper
+public interface UserMapper extends BaseMapper<TUser>{
 
-    public void updateUser(User user);
+    // Update an existing user
+    public void updateUser(User user);  
 
+    // Delete a user by ID
     public void deleteUser(int id);
 
+    // Insert a new user
     public void insertUser(User user);
 
-    @Select("SELECT * FROM users WHERE id = #{id}")
+    // Get a user by ID
     public User getUser(int id);
     
 }
